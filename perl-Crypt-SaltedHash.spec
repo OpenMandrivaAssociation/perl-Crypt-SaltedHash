@@ -1,23 +1,19 @@
 %define upstream_name    Crypt-SaltedHash
 %define upstream_version 0.05
 
-Name:       perl-%{upstream_name}
-%if %mdkversion > 200900
-Version:    %perl_convert_version %{upstream_version}
-%else
-Version:    %{upstream_version}
-%endif
-Release:    %mkrel 2
-Summary:    Working with salted hashes
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
+Summary:	Working with salted hashes
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Digest)
-BuildRequires: perl(Module::Build::Compat)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Digest)
+BuildRequires:	perl(Module::Build::Compat)
+BuildArch:	noarch
 
 %description
 The 'Crypt::SaltedHash' module provides an object oriented interface to
@@ -29,23 +25,29 @@ use of different digital agorithms.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/Crypt
+%{perl_vendorlib}/Crypt
 
+%changelog
+* Sat May 28 2011 Funda Wang <fwang@mandriva.org> 0.50.0-2mdv2011.0
++ Revision: 680870
+- mass rebuild
+
+* Wed Oct 07 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.50.0-1mdv2011.0
++ Revision: 455626
+- import perl-Crypt-SaltedHash
+
+
+* Wed Oct 07 2009 cpan2dist 0.05-1mdv
+- initial mdv release, generated with cpan2dist
