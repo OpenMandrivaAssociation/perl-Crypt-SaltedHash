@@ -1,9 +1,9 @@
 %define upstream_name    Crypt-SaltedHash
-%define upstream_version 0.05
+%define upstream_version 0.09
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 Summary:	Working with salted hashes
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -51,3 +51,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Wed Oct 07 2009 cpan2dist 0.05-1mdv
 - initial mdv release, generated with cpan2dist
+

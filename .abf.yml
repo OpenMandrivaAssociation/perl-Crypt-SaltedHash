@@ -1,2 +1,4 @@
+removed_sources:
+  Crypt-SaltedHash-0.05.tar.gz: 50ac7d11df3f5ed89fea8974aa553d7f6c57a832
 sources:
-  "Crypt-SaltedHash-0.05.tar.gz": 50ac7d11df3f5ed89fea8974aa553d7f6c57a832
+  Crypt-SaltedHash-0.09.tar.gz: 8026217ea3a10949e2463d994957f093432601e5
