@@ -11,6 +11,7 @@ Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
+BuildRequires: perl(Digest::SHA)
 BuildRequires: perl(Test::Fatal)
 BuildRequires:	perl(Digest)
 BuildRequires:	perl(Module::Build::Compat)
