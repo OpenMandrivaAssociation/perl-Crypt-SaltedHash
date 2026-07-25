@@ -1,15 +1,15 @@
 %define upstream_name    Crypt-SaltedHash
-%define upstream_version 0.09
+%define upstream_version 0.12
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 Summary:	Working with salted hashes
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/robrwo/perl-Crypt-SaltedHash
+Source0:	https://cpan.metacpan.org/authors/id/R/RR/RRWO/Crypt-SaltedHash-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
