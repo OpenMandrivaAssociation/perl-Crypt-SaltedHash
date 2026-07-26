@@ -1,15 +1,13 @@
 %define upstream_name    Crypt-SaltedHash
-%define upstream_version 0.12
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.12
+Release:	2
 Summary:	Working with salted hashes
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/robrwo/perl-Crypt-SaltedHash
-Source0:	https://cpan.metacpan.org/authors/id/R/RR/RRWO/Crypt-SaltedHash-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/R/RR/RRWO/Crypt-SaltedHash-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -26,7 +24,7 @@ formalization of this concept comes from RFC-3112 and is extended by the
 use of different digital agorithms.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
